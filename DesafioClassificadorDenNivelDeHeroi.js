@@ -1,46 +1,34 @@
-// Variáveis nome e xp do herói
-let nomeHeroi = "Dio.me"
-let XP = 1000
-
-let nivel
-
-
-if (XP <= 1000) {
-    nivel = "Ferro";
-}
-else if(XP >= 1001 && XP <= 2000){
-    nivel = "Broze"
-}
-else if (XP >= 2001 && XP <= 5000){
-    nivel="Prata"
-}
-else if (XP >= 5001 && XP <= 7000){
-    nivel="Ouro"
-}
-else if (XP >= 7001 && XP <= 8000 ){
-    nivel = "Platina"
-}
-else if (XP >= 8001 && XP <= 9000){
-    nivel = "Ascendente"
-}
-else if (XP >= 9001 && XP <= 10000){
-    nivel = "Imortal"
-}
-else{
-    nivel = "Radiante"
+function calcularSaldo(vitorias, derrotas) {
+    return vitorias - derrotas;
 }
 
-console.log(`O Herói de nome ${nomeHeroi} está no nível de ${nivel}`)
+function obterNivel(saldoVitorias) {
+    if (saldoVitorias < 10)
+        return "Ferro";
+        
+    else if (saldoVitorias <= 20)
+        return "Bronze";
+        
+    else if (saldoVitorias <= 50)
+        return "Prata";
+        
+    else if (saldoVitorias <= 80)
+        return "Ouro";
+        
+    else if (saldoVitorias <= 90)
+        return "Diamante";
 
+    else if (saldoVitorias <= 100)
+        return "Lendário";
+        
+    else
+        return "Imortal";
+}
 
+const vitorias = 15;
+const derrotas = 5;
 
+const saldoVitorias = calcularSaldo(vitorias, derrotas);
+const nivel = obterNivel(saldoVitorias);
 
-
-
-
-
-
-
-
-
-
+console.log(`O Herói tem saldo de ${saldoVitorias} e está no nível de ${nivel}`);
